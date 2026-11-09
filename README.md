@@ -16,6 +16,13 @@ The optimisation was done my me and an AI! Changes that have been made are:
 - **Trace hook:** `z80_trace` was being called for every Z80 instruction even with tracing off. It is now only hooked in while `TRACE_CPU` is enabled, and the main loop refreshes that each pass.
 - **Memory callbacks:** the five memory read/write callbacks (`mem_read0`, `mem_write0`, `do_mem_read`, `mem_read`, `mem_write`) now run from RAM.
 
+## SD-CARD changes
+
+The GPIO pins used for the SD-CARD have changed in this version, it now uses the same as the RunCPM project so the same setup can run any of the RunCPM, RC2040 or my version of RC2040-ROMWBW all without changing the SD-CARD connections.
+
+Note: This change will prevent it running on the original board from extreme electronics without changing the config for the SD-CARD gpio pins. The pins are defined near the top of RC2040.c Also see GIPO setting.md
+
+
 ## Z80 CP/M 80 emulation of RC2014 using the RP2040 (PI PICO) or RP2350 (PI PICO2) processor.
 ## and emulation of a handfull of hardware peripherals. 
 
